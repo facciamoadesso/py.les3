@@ -1,14 +1,10 @@
 import smtplib
 import os
 from dotenv import load_dotenv
-
 load_dotenv()
 
 from_address = os.getenv("EMAIL_ADDRESS")
 password = os.getenv("EMAIL_PASSWORD")
-
-print("FROM loaded:", from_address)
-print("PASSWORD loaded:", password)
 
 to_address = 'full.development@yandex.com'
 subject = 'Invitation!'
@@ -43,5 +39,3 @@ server = smtplib.SMTP_SSL('smtp.yandex.ru', 465)
 server.login(from_address, password)
 server.sendmail(from_address, to_address, letter)
 server.quit()
-
-print("Письмо успешно доставлено.")
