@@ -1,6 +1,7 @@
 import smtplib
 import os
 from dotenv import load_dotenv
+
 load_dotenv()
 
 from_address = os.getenv("EMAIL_ADDRESS")
